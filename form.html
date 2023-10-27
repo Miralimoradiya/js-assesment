@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: unset;
+            padding-bottom: 20px;
+        }
+        .priya{
+            width: 17%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" method="post" name="myform" class="" onsubmit="return form_valid()">
+        <!-- name -->
+        <div>
+            <label for="name" class="priya" pattern="[a-zA-Z]{1,}">Name</label>
+            <input type="text" id="name" name="name" class="" placeholder="enter your name"  />
+        </div>
+
+
+        <!-- last name -->
+        <div>
+            <label for="lastname" class="priya" pattern="[a-zA-Z]{1,}">Last Name</label>
+            <input type="text" id="lastname" name="lastname" class="" placeholder="enter your last name"  />
+        </div>
+
+
+        <!-- email -->
+        <div>
+            <label for="emaill" class="priya">Email</label>
+        <input type="email" id="emaill" name="emaill" class="" placeholder="it should contain @..."  />
+        </div>
+
+
+        <!-- mobile no -->
+        <div>
+            <label for="mno" class="priya">Mobile No</label>
+        <input type="number" id="mno" name="mno" class="" placeholder="enter mno" />
+        </div>
+
+
+        <!-- gender -->
+        <div>
+            <label for="gen" class="priya">Gender:</label>
+        <input type="radio" class="" id="gen" name="gen" /><p>Male</p>
+        <input type="radio" class="" id="gen" name="gen" /><p>Female</p>
+        </div> 
+
+
+        <!-- birthday -->
+        <div>
+            <label for="dob" class="priya">Date of Birth:</label>
+        <input id="dob" type="date" name="dob" size="12">
+        </div>
+
+
+        <!-- ADDRESS -->
+        <div>
+            <label for="ADDRESS" class="priya">address:</label>
+        <textarea name="ADDRESS" id="ADDRESS" cols="30" rows="10"></textarea>
+        </div>
+
+
+        <!-- city -->
+        <div>
+            <label for="city" class="priya">city:</label>
+        <input type="text" id="city" name="city" class="" placeholder="enter your city"  />
+        </div>
+
+
+        <!-- area pin -->
+        <div>
+            <label for="areapin" class="priya">area pin:</label>
+        <input type="number" id="areapin" name="areapin" class="" placeholder="enter mno" />
+        </div>
+
+
+        <!-- state -->
+        <div>
+            <label for="state" class="priya">state:</label>
+        <input type="text" id="state" name="state" class="" placeholder="enter state"  />
+        </div>
+
+
+        <!-- qualification -->
+        <div>
+            <label for="qualification" class="priya">Qualification:</label>
+        <select class="" name="qualification" id="qualification">
+        <option value="-1">Select Qualification</option> 
+        <option value="">10 pass</option>
+        <option value="">12 pass</option>
+        </select><br><br>
+        </div>
+
+
+        <!-- Specification -->
+        <div>
+            <label for="Specification"  class="priya">Specification:</label>
+        <input type="checkbox"  class="" id="Specification" name="c1" />Computer Science
+        <input type="checkbox"  class="" id="Specification" name="c2" />Information Technology
+        <input type="checkbox"  class="" id="Specification" name="c3" />Computer Architecture
+        <input type="checkbox"  class="" id="Specification" name="c4" />Tele Communication
+        </div> 
+
+
+        <!-- password -->
+        <div>
+            <label for="password" class="priya">Password:</label>
+        <input type="password" id="password" name="password" style="height: 18px;"> <br><br>
+        </div>
+
+
+        <!-- button -->
+        <div>
+            <input type="button" onclick="form_valid()" class="priya" value="Submit" />
+        </div>
+    </form>
+
+
+    <script>
+        function form_valid() {
+
+            let name = document.myform.name.value;
+
+            if (name == "") {
+                alert("enter name");
+            }else if(!name == " "){
+                alert(name);
+            } 
+            else if (!isNaN(name)) {
+                alert("enter alphabet");
+            }
+
+            // last name
+            let lastname = document.myform.lastname.value;
+
+            if (lastname == "") {
+                alert("enter last name");
+            }else if(!lastname == " "){
+                alert(lastname);
+            }
+
+            // email
+            let emaill = document.myform.emaill.value;
+
+            if (emaill == "") {
+                alert("enter email please");
+            }else if(!emaill == " "){
+                alert(emaill);
+            }
+
+            //  number
+            let mno = document.myform.mno.value;
+            if (mno == "") {
+                alert("enter your mobile number");
+                return false;
+            } else if (mno < 10) {
+                alert("enter number not more than 10 digit ");
+                return false;
+            }
+
+            // radio button
+            let male = document.myform.gen[0].checked;
+            let female = document.myform.gen[1].checked;
+
+            if (male == false && female == false) {
+                alert("select gender");
+                return false;
+            }
+
+            // birthday
+            let dob = document.myform.dob.value;
+
+            if (dob == "") {
+                alert("enter BirthDate");
+            }else if(!dob == " "){
+                alert(date);
+            }
+
+            // ADDRESS
+            let ADDRESS = document.myform.ADDRESS.value;
+
+            if (ADDRESS == "") {
+                alert("enter address");
+            } else if (!ADDRESS == " ") {
+                alert("welcome");
+            }
+
+            // city
+            let city = document.myform.city.value;
+
+            if (city == "") {
+                alert("enter city name");
+            }else if(!city == " "){
+                alert(city);
+            }
+
+            //  area pin
+            let areapin = document.myform.areapin.value;
+            if (areapin == "") {
+                alert("enter area pin");
+                return false;
+            } else if (mno < 6) {
+                alert("enter number not more than 6 digit ");
+                return false;
+            }
+
+            // state
+            let state = document.myform.state.value;
+
+            if (state == "") {
+                alert("enter state");
+            }else if(!state == " "){
+                alert(state);
+            }
+
+            // qualification
+            let qualification = document.myform.qualification.value;
+            if (qualification == -1) {
+                alert("select qualification");
+                return false;
+            }
+
+            // check box
+            let c1 = document.myform.c1.checked;
+            let c2 = document.myform.c2.checked;
+            let c3 = document.myform.c3.checked;
+            let c4 = document.myform.c4.checked;
+            if (c1 == false && c2 == false) {
+                alert("select Specification");
+                return false;
+            }
+
+            // password
+            let password = document.myform.password.value;
+
+            if (password == "") {
+                alert("enter paassword");
+            }else if(!password == " "){
+                alert(password);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
